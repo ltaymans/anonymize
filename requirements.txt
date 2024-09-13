@@ -30,6 +30,7 @@ narwhals==1.8.0
 numpy==1.21.0
 packaging==24.1
 pandas==2.2.2
+pdf2image==1.17.0
 pillow==10.4.0
 preshed==3.0.9
 protobuf==5.28.1
@@ -40,6 +41,7 @@ pydantic_core==2.23.3
 pydeck==0.9.1
 Pygments==2.18.0
 PyPDF2==3.0.1
+pytesseract==0.3.13
 python-dateutil==2.9.0.post0
 python-docx==1.1.2
 pytz==2024.2
