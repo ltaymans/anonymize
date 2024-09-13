@@ -1,26 +1,16 @@
 import streamlit as st
 import spacy
-import pytesseract
-from pdf2image import convert_from_path
-from PIL import Image
+from pdfminer.high_level import extract_text
 from io import BytesIO
 from docx import Document
 
 # Load the SpaCy model
 nlp = spacy.load("en_core_web_sm")
 
-# Function to extract text from images in PDF
+# Function to extract text from a PDF file using PDFMiner
 def extract_text_from_pdf(pdf_file):
-    # Convert PDF to a list of image objects
-    images = convert_from_path(pdf_file)
-    
-    # Initialize an empty string to hold the extracted text
-    text = ""
-    
-    # Use Pytesseract to extract text from each image
-    for img in images:
-        text += pytesseract.image_to_string(img)
-    
+    # Extract the text from the uploaded PDF file
+    text = extract_text(pdf_file)
     return text
 
 # Function to anonymize medical data
@@ -54,7 +44,7 @@ st.title("Medical Record Anonymizer")
 uploaded_file = st.file_uploader("Upload a PDF", type="pdf")
 
 if uploaded_file:
-    # Extract and display text from the PDF
+    # Extract and display text from the PDF using PDFMiner
     pdf_text = extract_text_from_pdf(uploaded_file)
     st.text_area("Extracted Text", pdf_text, height=200)
 
