@@ -1,0 +1,36 @@
+# Ignore virtual environment folder
+venv/
+ENV/
+env/
+.venv/
+
+# Ignore python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore streamlit deployment-related files
+.streamlit/
+
+# Ignore logs and other output
+*.log
+*.csv
+*.dat
+*.sqlite
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore PyPDF2 temporary files
+*.pdf
+
+# Ignore docx files if not needed
+*.docx
